@@ -1,0 +1,110 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartShop</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">SmartShop</div>
+
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+
+            <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Best Online Shopping Website</h1>
+            <p>Buy trendy products with amazing discounts.</p>
+            <button>Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <h2>Categories</h2>
+
+        <div class="category-container">
+            <div class="category-card">Electronics</div>
+            <div class="category-card">Fashion</div>
+            <div class="category-card">Shoes</div>
+            <div class="category-card">Watches</div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products">
+        <h2>Featured Products</h2>
+
+        <div class="product-container">
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250" alt="">
+                <h3>Running Shoes</h3>
+                <p>$50</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250" alt="">
+                <h3>Smart Watch</h3>
+                <p>$80</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250" alt="">
+                <h3>Headphones</h3>
+                <p>$40</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250" alt="">
+                <h3>Hoodie</h3>
+                <p>$35</p>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+        <h2>Contact Us</h2>
+
+        <form>
+            <input type="text" placeholder="Enter Name">
+            <input type="email" placeholder="Enter Email">
+            <textarea placeholder="Enter Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 SmartShop | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
