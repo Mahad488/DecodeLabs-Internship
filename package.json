@@ -1,0 +1,19 @@
+{
+  "name": "smartshop",
+  "version": "2.0.0",
+  "description": "SmartShop E-Commerce Backend API with User, Product & Order Management",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^8.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

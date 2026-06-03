@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartShop Products</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app-notification" class="notification"></div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">SmartShop</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="products.html#categories">Categories</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><button class="nav-link-btn" type="button" id="nav-login">Login</button></li>
+                <li><button class="nav-link-btn" type="button" id="nav-register">Signup</button></li>
+            </ul>
+            <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <section class="page-hero-small">
+            <h1>Shop the best SmartShop products</h1>
+            <p>Search by name, filter by category, and add the best offers to your cart.</p>
+            <div class="hero-actions">
+                <a href="cart.html" class="btn btn-success">View Cart</a>
+            </div>
+        </section>
+
+        <section class="categories">
+            <h2>Categories</h2>
+            <div class="category-container" id="categories"></div>
+        </section>
+
+        <section class="products" id="products">
+            <div class="section-heading">
+                <h2>Featured Products</h2>
+                <div class="search-wrap">
+                    <input id="product-search" type="search" placeholder="Search products...">
+                </div>
+            </div>
+            <div class="product-container" id="products-list"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 SmartShop | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

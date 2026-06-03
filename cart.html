@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartShop Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app-notification" class="notification"></div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">SmartShop</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="products.html#categories">Categories</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><button class="nav-link-btn" type="button" id="nav-login">Login</button></li>
+                <li><button class="nav-link-btn" type="button" id="nav-register">Signup</button></li>
+            </ul>
+            <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        </nav>
+    </header>
+
+    <main class="page-content cart-page">
+        <section class="section-heading">
+            <h2>Your Shopping Cart</h2>
+        </section>
+
+        <div class="cart-items" id="cart-items"></div>
+
+        <div class="cart-footer">
+            <div class="cart-total">Total: <span id="cart-total">Rs. 0</span></div>
+            <div class="cart-buttons">
+                <button type="button" id="checkout-btn" class="btn btn-success">Checkout</button>
+                <button type="button" id="clear-cart-btn" class="btn btn-ghost">Clear Cart</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 SmartShop | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

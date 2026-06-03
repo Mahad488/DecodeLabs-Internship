@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="app-notification" class="notification"></div>
 
     <!-- Navbar -->
     <header>
@@ -19,11 +20,13 @@
             <div class="logo">SmartShop</div>
 
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="products.html#categories">Categories</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="nav-link-btn" type="button" id="nav-login">Login</button></li>
+                <li><button class="nav-link-btn" type="button" id="nav-register">Signup</button></li>
             </ul>
 
             <div class="menu-btn" onclick="toggleMenu()">☰</div>
@@ -31,11 +34,14 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-text">
-            <h1>Best Online Shopping Website</h1>
-            <p>Buy trendy products with amazing discounts.</p>
-            <button>Shop Now</button>
+            <h1>SmartShop: Shop the latest deals</h1>
+            <p>Choose from curated electronics, fashion, shoes, and watches with fast checkout.</p>
+            <div class="hero-actions">
+                <button type="button" id="shop-now">Shop Now</button>
+                <button type="button" class="btn btn-ghost" id="view-categories">Browse Categories</button>
+            </div>
         </div>
     </section>
 
@@ -43,62 +49,94 @@
     <section class="categories">
         <h2>Categories</h2>
 
-        <div class="category-container">
-            <div class="category-card">Electronics</div>
-            <div class="category-card">Fashion</div>
-            <div class="category-card">Shoes</div>
-            <div class="category-card">Watches</div>
-        </div>
+        <div class="category-container" id="categories"></div>
     </section>
 
     <!-- Products -->
-    <section class="products">
-        <h2>Featured Products</h2>
+    <section class="products" id="products">
+        <div class="section-heading">
+            <h2>Featured Products</h2>
+            <div class="search-wrap">
+                <input id="product-search" type="search" placeholder="Search products...">
+            </div>
+        </div>
+        <div class="product-container" id="products-list"></div>
+    </section>
 
-        <div class="product-container">
-
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250" alt="">
-                <h3>Running Shoes</h3>
-                <p>$50</p>
-                <button onclick="addToCart()">Add to Cart</button>
+    <!-- Checkout / Cart Section -->
+    <section class="checkout">
+        <div class="checkout-grid">
+            <div>
+                <h2>Ready to Order?</h2>
+                <p class="muted">Review your cart and checkout.</p>
+                <button type="button" id="checkout-btn" class="btn btn-success">Checkout</button>
+                <div id="checkout-summary" class="summary"></div>
             </div>
 
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250" alt="">
-                <h3>Smart Watch</h3>
-                <p>$80</p>
-                <button onclick="addToCart()">Add to Cart</button>
+            <div class="cart-panel">
+                <h3>Your Cart</h3>
+                <div id="cart-items" class="cart-items"></div>
+                <div class="cart-footer">
+                    <div class="cart-total">Total: <span id="cart-total">Rs. 0</span></div>
+                    <button type="button" id="clear-cart-btn" class="btn btn-ghost">Clear Cart</button>
+                </div>
             </div>
-
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250" alt="">
-                <h3>Headphones</h3>
-                <p>$40</p>
-                <button onclick="addToCart()">Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250" alt="">
-                <h3>Hoodie</h3>
-                <p>$35</p>
-                <button onclick="addToCart()">Add to Cart</button>
-            </div>
-
         </div>
     </section>
 
     <!-- Contact -->
-    <section class="contact">
+    <section class="contact" id="contact">
         <h2>Contact Us</h2>
 
-        <form>
-            <input type="text" placeholder="Enter Name">
-            <input type="email" placeholder="Enter Email">
-            <textarea placeholder="Enter Message"></textarea>
+        <form id="contact-form">
+            <input id="contact-name" type="text" placeholder="Enter Name" required>
+            <input id="contact-email" type="email" placeholder="Enter Email" required>
+            <textarea id="contact-message" placeholder="Enter Message" rows="5" required></textarea>
             <button type="submit">Send Message</button>
         </form>
     </section>
+
+    <!-- Auth Modals -->
+    <div class="modal" id="login-modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" type="button" onclick="closeModal('login-modal')">×</button>
+            <h3>Login to SmartShop</h3>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit" class="btn btn-success">Login</button>
+                <p class="modal-note">Not registered? <button type="button" class="modal-switch" onclick="closeModal('login-modal'); openModal('register-modal')">Create account</button></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="register-modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" type="button" onclick="closeModal('register-modal')">×</button>
+            <h3>Create your account</h3>
+            <form id="register-form">
+                <input type="text" id="register-name" placeholder="Your name" required>
+                <input type="email" id="register-email" placeholder="Email" required>
+                <input type="password" id="register-password" placeholder="Password" required>
+                <button type="submit" class="btn btn-success">Signup</button>
+                <p class="modal-note">Already a member? <button type="button" class="modal-switch" onclick="closeModal('register-modal'); openModal('login-modal')">Login</button></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="product-modal" aria-hidden="true">
+        <div class="modal-content product-modal-content">
+            <button class="modal-close" id="product-modal-close" type="button">×</button>
+            <img class="modal-product-image" src="https://via.placeholder.com/400?text=Product+Image" alt="Product image">
+            <div class="modal-product-details">
+                <h3 class="modal-product-title"></h3>
+                <p class="modal-product-price"></p>
+                <p class="modal-product-stock"></p>
+                <p class="modal-product-description"></p>
+                <button type="button" class="btn btn-add modal-add-cart" data-add-to-cart="">Add to Cart</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>

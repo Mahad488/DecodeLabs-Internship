@@ -1,0 +1,12 @@
+
+> smartshop@2.0.0 start
+> node server.js
+
+🚀 SmartShop Backend API running at http://localhost:3000
+🏠 Website URL: http://localhost:3000
+🔗 Signup Page: http://localhost:3000/signup
+🛠️  API Endpoints Registered:
+   - [POST] /api/users/register (Registration)
+   - [POST] /api/users/login    (Login)
+   - [GET]  /api/users          (List Users)
+   - [GET]  /api/categories     (Categories)
